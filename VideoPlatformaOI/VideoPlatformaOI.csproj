@@ -1,0 +1,912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3BE812BA-351E-4661-BDE4-F22204B2A708}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VideoPlatformaOI</RootNamespace>
+    <AssemblyName>VideoPlatformaOI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44306</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\themify-icons.css" />
+    <Content Include="Content\drimo\404.html" />
+    <Content Include="Content\drimo\blog-right-sidebar.html" />
+    <Content Include="Content\drimo\blog.html" />
+    <Content Include="Content\drimo\css\bootstrap.min.css" />
+    <Content Include="Content\drimo\css\font-awesome.min.css" />
+    <Content Include="Content\drimo\css\icofont.css" />
+    <Content Include="Content\drimo\css\responsive.css" />
+    <Content Include="Content\drimo\css\style.css" />
+    <Content Include="Content\drimo\css\_preloader.css" />
+    <Content Include="Content\drimo\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\drimo\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\drimo\fonts\icofont.svg" />
+    <Content Include="Content\drimo\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Content\drimo\img\3d-slider\flip-1.jpg" />
+    <Content Include="Content\drimo\img\3d-slider\flip-2.jpg" />
+    <Content Include="Content\drimo\img\3d-slider\flip-3.jpg" />
+    <Content Include="Content\drimo\img\3d-slider\slider-1.jpg" />
+    <Content Include="Content\drimo\img\3d-slider\slider-2.jpg" />
+    <Content Include="Content\drimo\img\ab-screen-nine.png" />
+    <Content Include="Content\drimo\img\add-img.jpg" />
+    <Content Include="Content\drimo\img\advanced-laptop.png" />
+    <Content Include="Content\drimo\img\app-mobile.png" />
+    <Content Include="Content\drimo\img\banner\banner-n-bg.jpg" />
+    <Content Include="Content\drimo\img\banner\banner-n-mobile.png" />
+    <Content Include="Content\drimo\img\banner\blog-banner-2.jpg" />
+    <Content Include="Content\drimo\img\banner\blog-banner-3.jpg" />
+    <Content Include="Content\drimo\img\banner\blog-banner.jpg" />
+    <Content Include="Content\drimo\img\banner\gadget-banner-bg.jpg" />
+    <Content Include="Content\drimo\img\banner\server-banner.jpg" />
+    <Content Include="Content\drimo\img\banner\server-shap.png" />
+    <Content Include="Content\drimo\img\blog\blog-author.png" />
+    <Content Include="Content\drimo\img\blog\blog-ms\blog-ms-1.jpg" />
+    <Content Include="Content\drimo\img\blog\blog-ms\blog-ms-2.jpg" />
+    <Content Include="Content\drimo\img\blog\blog-ms\blog-ms-3.jpg" />
+    <Content Include="Content\drimo\img\blog\blog-ms\blog-ms-4.jpg" />
+    <Content Include="Content\drimo\img\blog\blog-ms\blog-ms-5.jpg" />
+    <Content Include="Content\drimo\img\blog\blog-ms\blog-ms-6.jpg" />
+    <Content Include="Content\drimo\img\blog\blog-ms\blog-ms-7.jpg" />
+    <Content Include="Content\drimo\img\blog\blog-ms\blog-ms-8.jpg" />
+    <Content Include="Content\drimo\img\blog\l-blog\l-blog-1.jpg" />
+    <Content Include="Content\drimo\img\blog\l-blog\l-blog-2.jpg" />
+    <Content Include="Content\drimo\img\blog\l-blog\l-blog-3.jpg" />
+    <Content Include="Content\drimo\img\blog\l-blog\l-blog-4.jpg" />
+    <Content Include="Content\drimo\img\blog\l-blog\l-blog-5.jpg" />
+    <Content Include="Content\drimo\img\blog\l-blog\l-blog-6.jpg" />
+    <Content Include="Content\drimo\img\blog\l-blog\l-blog-7.jpg" />
+    <Content Include="Content\drimo\img\blog\r-l-news\r-l-news-1.jpg" />
+    <Content Include="Content\drimo\img\blog\r-l-news\r-l-news-2.jpg" />
+    <Content Include="Content\drimo\img\blog\r-l-news\r-l-news-3.jpg" />
+    <Content Include="Content\drimo\img\blog\recent-post\r-p-1.jpg" />
+    <Content Include="Content\drimo\img\blog\recent-post\r-p-2.jpg" />
+    <Content Include="Content\drimo\img\blog\recent-post\r-p-3.jpg" />
+    <Content Include="Content\drimo\img\blog\single-blog.jpg" />
+    <Content Include="Content\drimo\img\blog\sinlge-s-1.png" />
+    <Content Include="Content\drimo\img\blog\sinlge-s-2.png" />
+    <Content Include="Content\drimo\img\blog\standard-blog\st-blog-1.jpg" />
+    <Content Include="Content\drimo\img\blog\standard-blog\st-blog-2.jpg" />
+    <Content Include="Content\drimo\img\blog\standard-blog\st-blog-3.jpg" />
+    <Content Include="Content\drimo\img\blog\standard-blog\st-blog-4.jpg" />
+    <Content Include="Content\drimo\img\blog\standard-blog\st-blog-5.jpg" />
+    <Content Include="Content\drimo\img\blog\update-blog\up-blog-1.jpg" />
+    <Content Include="Content\drimo\img\blog\update-blog\up-blog-2.jpg" />
+    <Content Include="Content\drimo\img\blog\update-blog\up-blog-3.jpg" />
+    <Content Include="Content\drimo\img\c-service.jpg" />
+    <Content Include="Content\drimo\img\clients-count-n.jpg" />
+    <Content Include="Content\drimo\img\clients\c-logo-1.png" />
+    <Content Include="Content\drimo\img\clients\c-logo-2.png" />
+    <Content Include="Content\drimo\img\clients\c-logo-3.png" />
+    <Content Include="Content\drimo\img\clients\c-logo-4.png" />
+    <Content Include="Content\drimo\img\clients\c-nine-1.png" />
+    <Content Include="Content\drimo\img\clients\c-nine-2.png" />
+    <Content Include="Content\drimo\img\clients\c-nine-3.png" />
+    <Content Include="Content\drimo\img\clients\clients-1.jpg" />
+    <Content Include="Content\drimo\img\clients\dotted.png" />
+    <Content Include="Content\drimo\img\clients\mobile-bg.png" />
+    <Content Include="Content\drimo\img\clients\nine-logo-1.png" />
+    <Content Include="Content\drimo\img\clients\nine-logo-2.png" />
+    <Content Include="Content\drimo\img\clients\nine-logo-3.png" />
+    <Content Include="Content\drimo\img\clients\nine-logo-4.png" />
+    <Content Include="Content\drimo\img\clients\nine-logo-5.png" />
+    <Content Include="Content\drimo\img\comment\c-m-1.jpg" />
+    <Content Include="Content\drimo\img\comment\c-m-2.jpg" />
+    <Content Include="Content\drimo\img\dash-logo.png" />
+    <Content Include="Content\drimo\img\discover-bg.jpg" />
+    <Content Include="Content\drimo\img\discover-video.jpg" />
+    <Content Include="Content\drimo\img\discover-video.png" />
+    <Content Include="Content\drimo\img\domain-bg.jpg" />
+    <Content Include="Content\drimo\img\domain-logo.png" />
+    <Content Include="Content\drimo\img\eleven-logo.png" />
+    <Content Include="Content\drimo\img\error-bg.jpg" />
+    <Content Include="Content\drimo\img\error-man.png" />
+    <Content Include="Content\drimo\img\error-text.png" />
+    <Content Include="Content\drimo\img\fav-icon.png" />
+    <Content Include="Content\drimo\img\feature\f-dotted.png" />
+    <Content Include="Content\drimo\img\feature\ten-f-mobile.png" />
+    <Content Include="Content\drimo\img\footer-five-bg.png" />
+    <Content Include="Content\drimo\img\footer-five-logo.png" />
+    <Content Include="Content\drimo\img\ft-logo-3.png" />
+    <Content Include="Content\drimo\img\gadget\g-feature-1.png" />
+    <Content Include="Content\drimo\img\gadget\g-feature-2.png" />
+    <Content Include="Content\drimo\img\gadget\g-feature-3.png" />
+    <Content Include="Content\drimo\img\gadget\g-product\g-product-1.jpg" />
+    <Content Include="Content\drimo\img\gadget\g-product\g-s-product-1.jpg" />
+    <Content Include="Content\drimo\img\gadget\g-product\g-s-product-2.jpg" />
+    <Content Include="Content\drimo\img\gadget\g-product\g-s-product-3.jpg" />
+    <Content Include="Content\drimo\img\gadget\g-product\g-s-product-4.jpg" />
+    <Content Include="Content\drimo\img\gadget\g-video-1.png" />
+    <Content Include="Content\drimo\img\gadget\g-video-icon.png" />
+    <Content Include="Content\drimo\img\gadget\gadget-1.jpg" />
+    <Content Include="Content\drimo\img\gadget\gadget-man.png" />
+    <Content Include="Content\drimo\img\gadget\gd-art.jpg" />
+    <Content Include="Content\drimo\img\gadget\gd-man-1.png" />
+    <Content Include="Content\drimo\img\gadget\gd-sunglass.png" />
+    <Content Include="Content\drimo\img\gadget\inbox-gd.png" />
+    <Content Include="Content\drimo\img\gadget\review-border.png" />
+    <Content Include="Content\drimo\img\gadget\review-p.png" />
+    <Content Include="Content\drimo\img\gd-f-logo.png" />
+    <Content Include="Content\drimo\img\home-3\app.jpg" />
+    <Content Include="Content\drimo\img\home-3\app.png" />
+    <Content Include="Content\drimo\img\home-3\f-mockup.png" />
+    <Content Include="Content\drimo\img\home-3\get.jpg" />
+    <Content Include="Content\drimo\img\home-3\header-bg.jpg" />
+    <Content Include="Content\drimo\img\home-3\header-mobile.png" />
+    <Content Include="Content\drimo\img\home-3\mockup.png" />
+    <Content Include="Content\drimo\img\home-3\play.png" />
+    <Content Include="Content\drimo\img\home-3\responsive-mockup.png" />
+    <Content Include="Content\drimo\img\home-3\screenshot.jpg" />
+    <Content Include="Content\drimo\img\home-3\screenshot2.jpg" />
+    <Content Include="Content\drimo\img\home-3\screenshot3.jpg" />
+    <Content Include="Content\drimo\img\home-3\screenshot4.jpg" />
+    <Content Include="Content\drimo\img\home-3\screenshot5.jpg" />
+    <Content Include="Content\drimo\img\home-3\testimonial.png" />
+    <Content Include="Content\drimo\img\home-slider\airpod.png" />
+    <Content Include="Content\drimo\img\home-slider\apple-btn.png" />
+    <Content Include="Content\drimo\img\home-slider\google-btn.png" />
+    <Content Include="Content\drimo\img\home-slider\home-two-bg.jpg" />
+    <Content Include="Content\drimo\img\home-slider\hosting-1.jpg" />
+    <Content Include="Content\drimo\img\home-slider\hosting-2.jpg" />
+    <Content Include="Content\drimo\img\home-slider\pad-mockup.png" />
+    <Content Include="Content\drimo\img\home-slider\pad-shape.png" />
+    <Content Include="Content\drimo\img\home-slider\phone-img.png" />
+    <Content Include="Content\drimo\img\home-slider\slider-1.png" />
+    <Content Include="Content\drimo\img\home-slider\slider-8.png" />
+    <Content Include="Content\drimo\img\home-slider\slider-bg-1.png" />
+    <Content Include="Content\drimo\img\home-slider\slider-bg-10.png" />
+    <Content Include="Content\drimo\img\home-slider\slider-right-img.png" />
+    <Content Include="Content\drimo\img\hosting-service-1.png" />
+    <Content Include="Content\drimo\img\icon\apple.jpg" />
+    <Content Include="Content\drimo\img\icon\c-count-1.png" />
+    <Content Include="Content\drimo\img\icon\c-count-2.png" />
+    <Content Include="Content\drimo\img\icon\c-count-3.png" />
+    <Content Include="Content\drimo\img\icon\c-count-4.png" />
+    <Content Include="Content\drimo\img\icon\check-icon.png" />
+    <Content Include="Content\drimo\img\icon\customer-c-1.png" />
+    <Content Include="Content\drimo\img\icon\customer-c-2.png" />
+    <Content Include="Content\drimo\img\icon\customer-c-3.png" />
+    <Content Include="Content\drimo\img\icon\customer-c-4.png" />
+    <Content Include="Content\drimo\img\icon\dotted.png" />
+    <Content Include="Content\drimo\img\icon\g-f-1.png" />
+    <Content Include="Content\drimo\img\icon\g-f-2.png" />
+    <Content Include="Content\drimo\img\icon\g-f-3.png" />
+    <Content Include="Content\drimo\img\icon\g-f-4.png" />
+    <Content Include="Content\drimo\img\icon\g-f-5.png" />
+    <Content Include="Content\drimo\img\icon\g-f-6.png" />
+    <Content Include="Content\drimo\img\icon\google.jpg" />
+    <Content Include="Content\drimo\img\icon\h-service-1.png" />
+    <Content Include="Content\drimo\img\icon\h-service-2.png" />
+    <Content Include="Content\drimo\img\icon\h-service-3.png" />
+    <Content Include="Content\drimo\img\icon\h-service-4.png" />
+    <Content Include="Content\drimo\img\icon\n-p-1.png" />
+    <Content Include="Content\drimo\img\icon\n-p-2.png" />
+    <Content Include="Content\drimo\img\icon\n-p-3.png" />
+    <Content Include="Content\drimo\img\icon\n-p-4.png" />
+    <Content Include="Content\drimo\img\icon\n-p-5.png" />
+    <Content Include="Content\drimo\img\icon\n-p-6.png" />
+    <Content Include="Content\drimo\img\icon\p-icon-1.png" />
+    <Content Include="Content\drimo\img\icon\p-icon-2.png" />
+    <Content Include="Content\drimo\img\icon\p-icon-3.png" />
+    <Content Include="Content\drimo\img\icon\p-icon-4.png" />
+    <Content Include="Content\drimo\img\icon\p-icon-5.png" />
+    <Content Include="Content\drimo\img\icon\p-icon-6.png" />
+    <Content Include="Content\drimo\img\icon\play-video.png" />
+    <Content Include="Content\drimo\img\icon\pw-icon-1.png" />
+    <Content Include="Content\drimo\img\icon\pw-icon-2.png" />
+    <Content Include="Content\drimo\img\icon\pw-icon-3.png" />
+    <Content Include="Content\drimo\img\icon\pw-icon-4.png" />
+    <Content Include="Content\drimo\img\icon\s-price-1.png" />
+    <Content Include="Content\drimo\img\icon\s-price-2.png" />
+    <Content Include="Content\drimo\img\icon\s-price-3.png" />
+    <Content Include="Content\drimo\img\icon\search-icon.png" />
+    <Content Include="Content\drimo\img\icon\server-icon-1.png" />
+    <Content Include="Content\drimo\img\icon\server-icon-2.png" />
+    <Content Include="Content\drimo\img\icon\server-icon-3.png" />
+    <Content Include="Content\drimo\img\icon\server-icon-4.png" />
+    <Content Include="Content\drimo\img\icon\shap-1.png" />
+    <Content Include="Content\drimo\img\icon\shap-2.png" />
+    <Content Include="Content\drimo\img\icon\shap-3.png" />
+    <Content Include="Content\drimo\img\icon\shap-4.png" />
+    <Content Include="Content\drimo\img\icon\ss-icon-1.png" />
+    <Content Include="Content\drimo\img\icon\ss-icon-10.png" />
+    <Content Include="Content\drimo\img\icon\ss-icon-2.png" />
+    <Content Include="Content\drimo\img\icon\ss-icon-3.png" />
+    <Content Include="Content\drimo\img\icon\ss-icon-4.png" />
+    <Content Include="Content\drimo\img\icon\ss-icon-5.png" />
+    <Content Include="Content\drimo\img\icon\ss-icon-6.png" />
+    <Content Include="Content\drimo\img\icon\ss-icon-7.png" />
+    <Content Include="Content\drimo\img\icon\ss-icon-8.png" />
+    <Content Include="Content\drimo\img\icon\ss-icon-9.png" />
+    <Content Include="Content\drimo\img\icon\ten-d-1.png" />
+    <Content Include="Content\drimo\img\icon\ten-d-2.png" />
+    <Content Include="Content\drimo\img\icon\ten-d-3.png" />
+    <Content Include="Content\drimo\img\icon\ten-d-4.png" />
+    <Content Include="Content\drimo\img\icon\ten-d-5.png" />
+    <Content Include="Content\drimo\img\icon\ten-d-6.png" />
+    <Content Include="Content\drimo\img\insta-feed\insta-1.jpg" />
+    <Content Include="Content\drimo\img\insta-feed\insta-2.jpg" />
+    <Content Include="Content\drimo\img\insta-feed\insta-3.jpg" />
+    <Content Include="Content\drimo\img\insta-feed\insta-4.jpg" />
+    <Content Include="Content\drimo\img\insta-feed\insta-5.jpg" />
+    <Content Include="Content\drimo\img\insta-feed\insta-6.jpg" />
+    <Content Include="Content\drimo\img\laptop-slider\laptop-mockup.png" />
+    <Content Include="Content\drimo\img\laptop-slider\slider-1.jpg" />
+    <Content Include="Content\drimo\img\laptop-slider\slider-2.jpg" />
+    <Content Include="Content\drimo\img\laptop-slider\slider-3.jpg" />
+    <Content Include="Content\drimo\img\left-side-hosting.png" />
+    <Content Include="Content\drimo\img\logo-2.png" />
+    <Content Include="Content\drimo\img\logo-3.png" />
+    <Content Include="Content\drimo\img\logo-6.png" />
+    <Content Include="Content\drimo\img\logo-8.png" />
+    <Content Include="Content\drimo\img\logo.png" />
+    <Content Include="Content\drimo\img\macbook-res.png" />
+    <Content Include="Content\drimo\img\map.png" />
+    <Content Include="Content\drimo\img\map1.png" />
+    <Content Include="Content\drimo\img\mockup-img\m-image-1.png" />
+    <Content Include="Content\drimo\img\mockup-img\m-image-2.png" />
+    <Content Include="Content\drimo\img\mockup-img\m-image-3.png" />
+    <Content Include="Content\drimo\img\mockup-img\m-image-4.png" />
+    <Content Include="Content\drimo\img\mockup-img\m-image-5.png" />
+    <Content Include="Content\drimo\img\mockup-img\m-image-6.png" />
+    <Content Include="Content\drimo\img\mockup-img\m-image-7.png" />
+    <Content Include="Content\drimo\img\mockup-img\m-image-8.png" />
+    <Content Include="Content\drimo\img\nine-product.png" />
+    <Content Include="Content\drimo\img\pink-footer-bg.jpg" />
+    <Content Include="Content\drimo\img\play-video.png" />
+    <Content Include="Content\drimo\img\power-ds-img.png" />
+    <Content Include="Content\drimo\img\price-head-1.jpg" />
+    <Content Include="Content\drimo\img\product\product-1.png" />
+    <Content Include="Content\drimo\img\product\product-2.png" />
+    <Content Include="Content\drimo\img\product\product-3.png" />
+    <Content Include="Content\drimo\img\provide-ds-img.png" />
+    <Content Include="Content\drimo\img\question-tab.png" />
+    <Content Include="Content\drimo\img\reparing-img.png" />
+    <Content Include="Content\drimo\img\res-img.png" />
+    <Content Include="Content\drimo\img\right-side-hosting.png" />
+    <Content Include="Content\drimo\img\round-circle.png" />
+    <Content Include="Content\drimo\img\screenshot\app-screen.png" />
+    <Content Include="Content\drimo\img\screenshot\mobile-mockup.png" />
+    <Content Include="Content\drimo\img\screenshot\mobile-mockup2.png" />
+    <Content Include="Content\drimo\img\screenshot\mochup.png" />
+    <Content Include="Content\drimo\img\screenshot\screenshot-1.jpg" />
+    <Content Include="Content\drimo\img\screenshot\screenshot-2.jpg" />
+    <Content Include="Content\drimo\img\screenshot\screenshot-3.jpg" />
+    <Content Include="Content\drimo\img\screenshot\screenshot-4.jpg" />
+    <Content Include="Content\drimo\img\screenshot\screenshot-n-1.jpg" />
+    <Content Include="Content\drimo\img\screenshot\screenshot-n-2.jpg" />
+    <Content Include="Content\drimo\img\screenshot\screenshot-n-3.jpg" />
+    <Content Include="Content\drimo\img\screenshot\screenshot-n-4.jpg" />
+    <Content Include="Content\drimo\img\screenshot\screenshot-n-5.jpg" />
+    <Content Include="Content\drimo\img\screenshot\screenshot-n-6.jpg" />
+    <Content Include="Content\drimo\img\search-bg-1.jpg" />
+    <Content Include="Content\drimo\img\server-1.png" />
+    <Content Include="Content\drimo\img\service\available-service.jpg" />
+    <Content Include="Content\drimo\img\service\popular-s-hos.png" />
+    <Content Include="Content\drimo\img\settings-1.jpg" />
+    <Content Include="Content\drimo\img\settings-1.png" />
+    <Content Include="Content\drimo\img\settings-2.jpg" />
+    <Content Include="Content\drimo\img\settings-2.png" />
+    <Content Include="Content\drimo\img\singnature.png" />
+    <Content Include="Content\drimo\img\start-up-bg.jpg" />
+    <Content Include="Content\drimo\img\start-up.png" />
+    <Content Include="Content\drimo\img\subscribe-6.png" />
+    <Content Include="Content\drimo\img\team-slider\exclusive-team\ex-team-1.jpg" />
+    <Content Include="Content\drimo\img\team-slider\exclusive-team\ex-team-2.jpg" />
+    <Content Include="Content\drimo\img\team-slider\exclusive-team\ex-team-3.jpg" />
+    <Content Include="Content\drimo\img\team-slider\team-1.jpg" />
+    <Content Include="Content\drimo\img\team-slider\team-2.jpg" />
+    <Content Include="Content\drimo\img\team-slider\team-3.jpg" />
+    <Content Include="Content\drimo\img\team-slider\team-4.jpg" />
+    <Content Include="Content\drimo\img\team-slider\ten-team-1.jpg" />
+    <Content Include="Content\drimo\img\team-slider\ten-team-2.jpg" />
+    <Content Include="Content\drimo\img\team-slider\ten-team-3.jpg" />
+    <Content Include="Content\drimo\img\ten-f-logo.png" />
+    <Content Include="Content\drimo\img\ten-ft-bg.jpg" />
+    <Content Include="Content\drimo\img\ten-mobile-2.png" />
+    <Content Include="Content\drimo\img\ten-mobile.png" />
+    <Content Include="Content\drimo\img\ten-ms-img.jpg" />
+    <Content Include="Content\drimo\img\testimonials\ten-testi-1.png" />
+    <Content Include="Content\drimo\img\testimonials\ten-testi-2.png" />
+    <Content Include="Content\drimo\img\time-newsletter-bg.png" />
+    <Content Include="Content\drimo\img\triangle-shap-1.png" />
+    <Content Include="Content\drimo\img\user\testimonial.png" />
+    <Content Include="Content\drimo\img\user\user-1.png" />
+    <Content Include="Content\drimo\img\video-img.png" />
+    <Content Include="Content\drimo\img\video-img2.png" />
+    <Content Include="Content\drimo\img\video-right-bg.png" />
+    <Content Include="Content\drimo\img\video\earphone.png" />
+    <Content Include="Content\drimo\img\video\river-video.jpg" />
+    <Content Include="Content\drimo\img\video\ten-video-icon.png" />
+    <Content Include="Content\drimo\img\video\ten-video.jpg" />
+    <Content Include="Content\drimo\img\video\video-nine-bg.jpg" />
+    <Content Include="Content\drimo\img\video\video-nine.jpg" />
+    <Content Include="Content\drimo\img\video\video-play-icon.png" />
+    <Content Include="Content\drimo\index-10.html" />
+    <Content Include="Content\drimo\index-11.html" />
+    <Content Include="Content\drimo\index-2.html" />
+    <Content Include="Content\drimo\index-3.html" />
+    <Content Include="Content\drimo\index-4.html" />
+    <Content Include="Content\drimo\index-5.html" />
+    <Content Include="Content\drimo\index-6.html" />
+    <Content Include="Content\drimo\index-7.html" />
+    <Content Include="Content\drimo\index-8.html" />
+    <Content Include="Content\drimo\index-9.html" />
+    <Content Include="Content\drimo\index.html" />
+    <Content Include="Content\drimo\js\apear.js" />
+    <Content Include="Content\drimo\js\bootstrap.min.js" />
+    <Content Include="Content\drimo\js\countto.js" />
+    <Content Include="Content\drimo\js\gmaps.min.js" />
+    <Content Include="Content\drimo\js\jquery-2.2.4.js" />
+    <Content Include="Content\drimo\js\theme.js" />
+    <Content Include="Content\drimo\single-blog.html" />
+    <Content Include="Content\drimo\vendors\animate-css\animate.css" />
+    <Content Include="Content\drimo\vendors\animate-css\site.css" />
+    <Content Include="Content\drimo\vendors\animate-css\wow.min.js" />
+    <Content Include="Content\drimo\vendors\circle-progress\circle-progress.js" />
+    <Content Include="Content\drimo\vendors\counterup\jquery.counterup.min.js" />
+    <Content Include="Content\drimo\vendors\counterup\waypoints.min.js" />
+    <Content Include="Content\drimo\vendors\flexslider\flex-slider.css" />
+    <Content Include="Content\drimo\vendors\flexslider\flex-slider.js" />
+    <Content Include="Content\drimo\vendors\flexslider\fonts\flexslider-icon.svg" />
+    <Content Include="Content\drimo\vendors\flexslider\mixitup.js" />
+    <Content Include="Content\drimo\vendors\flipster-slider\jquery.flipster.min.css" />
+    <Content Include="Content\drimo\vendors\flipster-slider\jquery.flipster.min.js" />
+    <Content Include="Content\drimo\vendors\icofont\css\icofont.css" />
+    <Content Include="Content\drimo\vendors\icofont\fonts\icofont.svg" />
+    <Content Include="Content\drimo\vendors\isotope\imagesloaded.pkgd.min.js" />
+    <Content Include="Content\drimo\vendors\isotope\isotope.pkgd.min.js" />
+    <Content Include="Content\drimo\vendors\linear-icon\fonts\Linearicons-Free.svg" />
+    <Content Include="Content\drimo\vendors\linear-icon\style.css" />
+    <Content Include="Content\drimo\vendors\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Content\drimo\vendors\magnific-popup\magnific-popup.css" />
+    <Content Include="Content\drimo\vendors\nice-selector\jquery.nice-select.min.js" />
+    <Content Include="Content\drimo\vendors\nice-selector\nice-select.css" />
+    <Content Include="Content\drimo\vendors\owl-carousel\assets\ajax-loader.gif" />
+    <Content Include="Content\drimo\vendors\owl-carousel\assets\owl.carousel.css" />
+    <Content Include="Content\drimo\vendors\owl-carousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\drimo\vendors\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Content\drimo\vendors\parallax\background-parallax.min.js" />
+    <Content Include="Content\drimo\vendors\parallax\jquery.parallax-scroll.js" />
+    <Content Include="Content\drimo\vendors\revolution\assets\coloredbg.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\gridtile.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\gridtile_3x3.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\gridtile_3x3_white.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\gridtile_white.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\loader.gif" />
+    <Content Include="Content\drimo\vendors\revolution\assets\sources\fb.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\sources\fr.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\sources\ig.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\sources\post.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\sources\revolution_slide1.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\sources\revolution_slide2.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\sources\tw.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\sources\vm.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\sources\wc.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\sources\yt.png" />
+    <Content Include="Content\drimo\vendors\revolution\assets\svg\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\css\closedhand.cur" />
+    <Content Include="Content\drimo\vendors\revolution\css\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\css\layers.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\ares.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\custom.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\dione.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\erinyen.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\gyges.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\hades.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\hebe.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\hephaistos.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\hermes.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\hesperiden.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\metis.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\persephone.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\uranus.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation-skins\zeus.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\navigation.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\openhand.cur" />
+    <Content Include="Content\drimo\vendors\revolution\css\settings-ver.5.3.1.css" />
+    <Content Include="Content\drimo\vendors\revolution\css\settings.css" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\font-awesome\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\pe-icon-7-stroke\css\helper.css" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\pe-icon-7-stroke\css\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\pe-icon-7-stroke\fonts\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\pe-icon-7-stroke\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\revicons\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\revicons\revicons.svg" />
+    <Content Include="Content\drimo\vendors\revolution\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\source\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\source\revolution.extension.actions.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\source\revolution.extension.carousel.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\source\revolution.extension.kenburn.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\source\revolution.extension.layeranimation.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\source\revolution.extension.migration.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\source\revolution.extension.navigation.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\source\revolution.extension.parallax.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\source\revolution.extension.slideanims.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\source\revolution.extension.video.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\js\jquery.themepunch.enablelog.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\jquery.themepunch.tools.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\source\index.php" />
+    <Content Include="Content\drimo\vendors\revolution\js\source\jquery.themepunch.enablelog.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\source\jquery.themepunch.revolution.js" />
+    <Content Include="Content\drimo\vendors\revolution\js\source\jquery.themepunch.tools.min.js" />
+    <Content Include="Content\drimo\vendors\revolution\php\facebook\class-facebook.php" />
+    <Content Include="Content\drimo\vendors\revolution\php\flickr\class-flickr.php" />
+    <Content Include="Content\drimo\vendors\revolution\php\instagram\class-instagram.php" />
+    <Content Include="Content\drimo\vendors\revolution\php\twitter\class-twitter.php" />
+    <Content Include="Content\drimo\vendors\revolution\php\twitter\connection\Application.php" />
+    <Content Include="Content\drimo\vendors\revolution\php\twitter\connection\ConnectionAbstract.php" />
+    <Content Include="Content\drimo\vendors\revolution\php\twitter\connection\User.php" />
+    <Content Include="Content\drimo\vendors\revolution\php\twitter\RestApi.php" />
+    <Content Include="Content\drimo\vendors\revolution\php\vimeo\class-vimeo.php" />
+    <Content Include="Content\drimo\vendors\revolution\php\youtube\class-youtube.php" />
+    <Content Include="Content\drimo\vendors\swiper\css\swiper.min.css" />
+    <Content Include="Content\drimo\vendors\swiper\js\swiper.min.js" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\themify.svg" />
+    <Content Include="Content\image\fav-icon.png" />
+    <Content Include="Content\image\header\slider-1.png" />
+    <Content Include="Content\image\logo.png" />
+    <Content Include="Content\image\product\blog-1.png" />
+    <Content Include="Content\image\product\blog-2.png" />
+    <Content Include="Content\image\product\blog-3.png" />
+    <Content Include="Content\image\product\blog-4.png" />
+    <Content Include="Content\image\product\error_page.png" />
+    <Content Include="Content\image\product\index-1.png" />
+    <Content Include="Content\image\product\index-10.png" />
+    <Content Include="Content\image\product\index-11.png" />
+    <Content Include="Content\image\product\index-2.png" />
+    <Content Include="Content\image\product\index-3.png" />
+    <Content Include="Content\image\product\index-4.png" />
+    <Content Include="Content\image\product\index-5.png" />
+    <Content Include="Content\image\product\index-6.png" />
+    <Content Include="Content\image\product\index-7.png" />
+    <Content Include="Content\image\product\index-8.png" />
+    <Content Include="Content\image\product\index-9.png" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\jquery-2.2.4.min.js" />
+    <Content Include="Content\js\min\custom.min.js" />
+    <Content Include="Content\js\min\nav.min.js" />
+    <Content Include="Content\js\nav.js" />
+    <Content Include="Content\js\scrollIt.min.js" />
+    <Content Include="Content\js\wow.js" />
+    <Content Include="Content\vendores\couterup\jquery.counterup.min.js" />
+    <Content Include="Content\vendores\ripples\jquery.ripples-min.js" />
+    <Content Include="Content\vendores\typedjs\typed.min.js" />
+    <Content Include="Content\vendores\waypoint\waypoints.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Content\css\style.css.map" />
+    <Content Include="Content\drimo\.DS_Store" />
+    <Content Include="Content\drimo\css\.DS_Store" />
+    <Content Include="Content\drimo\css\style.css.map" />
+    <Content Include="Content\drimo\css\_preloader.css.map" />
+    <Content Include="Content\drimo\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\drimo\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\drimo\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\drimo\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\drimo\fonts\FontAwesome.otf" />
+    <Content Include="Content\drimo\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\drimo\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\drimo\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\drimo\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\drimo\fonts\icofont.eot" />
+    <Content Include="Content\drimo\fonts\icofont.ttf" />
+    <Content Include="Content\drimo\fonts\icofont.woff" />
+    <Content Include="Content\drimo\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Content\drimo\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Content\drimo\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Content\drimo\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Content\drimo\img\.DS_Store" />
+    <Content Include="Content\drimo\img\banner\.DS_Store" />
+    <Content Include="Content\drimo\img\blog\.DS_Store" />
+    <Content Include="Content\drimo\img\clients\.DS_Store" />
+    <Content Include="Content\drimo\img\feature\.DS_Store" />
+    <Content Include="Content\drimo\img\gadget\.DS_Store" />
+    <Content Include="Content\drimo\img\home-3\.DS_Store" />
+    <Content Include="Content\drimo\img\home-slider\.DS_Store" />
+    <Content Include="Content\drimo\img\product\.DS_Store" />
+    <Content Include="Content\drimo\img\screenshot\.DS_Store" />
+    <Content Include="Content\drimo\img\service\.DS_Store" />
+    <Content Include="Content\drimo\img\team-slider\.DS_Store" />
+    <Content Include="Content\drimo\img\testimonials\.DS_Store" />
+    <Content Include="Content\drimo\img\video\.DS_Store" />
+    <Content Include="Content\drimo\js\.DS_Store" />
+    <Content Include="Content\drimo\prepros-6.config" />
+    <Content Include="Content\drimo\scss\.DS_Store" />
+    <Content Include="Content\drimo\scss\style.scss" />
+    <Content Include="Content\drimo\scss\_banner.scss" />
+    <Content Include="Content\drimo\scss\_blog.scss" />
+    <Content Include="Content\drimo\scss\_button.scss" />
+    <Content Include="Content\drimo\scss\_clients.scss" />
+    <Content Include="Content\drimo\scss\_contact.scss" />
+    <Content Include="Content\drimo\scss\_customer.scss" />
+    <Content Include="Content\drimo\scss\_feature.scss" />
+    <Content Include="Content\drimo\scss\_footer.scss" />
+    <Content Include="Content\drimo\scss\_header.scss" />
+    <Content Include="Content\drimo\scss\_predefin.scss" />
+    <Content Include="Content\drimo\scss\_preloader.scss" />
+    <Content Include="Content\drimo\scss\_price.scss" />
+    <Content Include="Content\drimo\scss\_product.scss" />
+    <Content Include="Content\drimo\scss\_service.scss" />
+    <Content Include="Content\drimo\scss\_slider.scss" />
+    <Content Include="Content\drimo\scss\_team.scss" />
+    <Content Include="Content\drimo\scss\_testimonial.scss" />
+    <Content Include="Content\drimo\scss\_variables.scss" />
+    <Content Include="Content\drimo\scss\_video.scss" />
+    <Content Include="Content\drimo\vendors\.DS_Store" />
+    <Content Include="Content\drimo\vendors\flexslider\fonts\flexslider-icon.eot" />
+    <Content Include="Content\drimo\vendors\flexslider\fonts\flexslider-icon.ttf" />
+    <Content Include="Content\drimo\vendors\flexslider\fonts\flexslider-icon.woff" />
+    <Content Include="Content\drimo\vendors\icofont\.DS_Store" />
+    <Content Include="Content\drimo\vendors\icofont\fonts\icofont.eot" />
+    <Content Include="Content\drimo\vendors\icofont\fonts\icofont.ttf" />
+    <Content Include="Content\drimo\vendors\icofont\fonts\icofont.woff" />
+    <Content Include="Content\drimo\vendors\linear-icon\fonts\Linearicons-Free.eot" />
+    <Content Include="Content\drimo\vendors\linear-icon\fonts\Linearicons-Free.ttf" />
+    <Content Include="Content\drimo\vendors\linear-icon\fonts\Linearicons-Free.woff" />
+    <Content Include="Content\drimo\vendors\linear-icon\fonts\Linearicons-Free.woff2" />
+    <Content Include="Content\drimo\vendors\magnific-popup\.DS_Store" />
+    <Content Include="Content\drimo\vendors\owl-carousel\.DS_Store" />
+    <Content Include="Content\drimo\vendors\owl-carousel\assets\.DS_Store" />
+    <Content Include="Content\drimo\vendors\revolution\.DS_Store" />
+    <Content Include="Content\drimo\vendors\revolution\assets\.DS_Store" />
+    <Content Include="Content\drimo\vendors\revolution\assets\svg\svg.zip" />
+    <Content Include="Content\drimo\vendors\revolution\css\.DS_Store" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\.DS_Store" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\font-awesome\.DS_Store" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\pe-icon-7-stroke\.DS_Store" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\revicons\revicons.eot" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\revicons\revicons.ttf" />
+    <Content Include="Content\drimo\vendors\revolution\fonts\revicons\revicons.woff" />
+    <Content Include="Content\drimo\vendors\revolution\info.cfg" />
+    <Content Include="Content\drimo\vendors\revolution\js\.DS_Store" />
+    <Content Include="Content\drimo\vendors\revolution\js\extensions\.DS_Store" />
+    <Content Include="Content\drimo\vendors\revolution\php\.DS_Store" />
+    <Content Include="Content\drimo\vendors\revolution\php\twitter\.DS_Store" />
+    <Content Include="Content\drimo\vendors\swiper\css\.DS_Store" />
+    <Content Include="Content\drimo\vendors\swiper\js\.DS_Store" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\Montserrat-Bold.ttf" />
+    <Content Include="Content\fonts\montserrat-light_[allfont.net].ttf" />
+    <Content Include="Content\fonts\Montserrat-Regular.ttf" />
+    <Content Include="Content\fonts\Montserrat-SemiBold.ttf" />
+    <Content Include="Content\fonts\MontserratAlternates-Light.ttf" />
+    <Content Include="Content\fonts\MontserratAlternates-Thin.ttf" />
+    <Content Include="Content\fonts\OpenSans-Bold.ttf" />
+    <Content Include="Content\fonts\OpenSans-BoldItalic.ttf" />
+    <Content Include="Content\fonts\OpenSans-ExtraBold.ttf" />
+    <Content Include="Content\fonts\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="Content\fonts\OpenSans-Italic.ttf" />
+    <Content Include="Content\fonts\OpenSans-Light.ttf" />
+    <Content Include="Content\fonts\OpenSans-LightItalic.ttf" />
+    <Content Include="Content\fonts\OpenSans-Regular.ttf" />
+    <Content Include="Content\fonts\OpenSans-Semibold.ttf" />
+    <Content Include="Content\fonts\OpenSans-SemiboldItalic.ttf" />
+    <Content Include="Content\fonts\themify.eot" />
+    <Content Include="Content\fonts\themify.ttf" />
+    <Content Include="Content\fonts\themify.woff" />
+    <Content Include="Content\image\.DS_Store" />
+    <Content Include="Content\image\header\.DS_Store" />
+    <Content Include="Content\image\product\.DS_Store" />
+    <Content Include="Content\vendores\.DS_Store" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52609</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44306/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

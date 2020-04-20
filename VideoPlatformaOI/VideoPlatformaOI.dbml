@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VideoPlatformaOI" Class="VideoPlatformaOIDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-F7QTG0F;Initial Catalog=VideoPlatformaOI;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="VideoPlatformaOIConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DirektorVideo" Member="DirektorVideos">
+    <Type Name="DirektorVideo">
+      <Column Name="IdVidea" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Naslov" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Video" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Datum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vrsta" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdKorisnika" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Korisnik_DirektorVideo" Member="Korisnik" ThisKey="IdKorisnika" OtherKey="IdKorisnika" Type="Korisnik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PravnaVideo" Member="PravnaVideos">
+    <Type Name="PravnaVideo">
+      <Column Name="IdVidea" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Naslov" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Video" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Datum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vrsta" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdKorisnika" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Korisnik_PravnaVideo" Member="Korisnik" ThisKey="IdKorisnika" OtherKey="IdKorisnika" Type="Korisnik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EkonomskaVideo" Member="EkonomskaVideos">
+    <Type Name="EkonomskaVideo">
+      <Column Name="IdVidea" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Naslov" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Video" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Datum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vrsta" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdKorisnika" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Korisnik_EkonomskaVideo" Member="Korisnik" ThisKey="IdKorisnika" OtherKey="IdKorisnika" Type="Korisnik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ITVideo" Member="ITVideos">
+    <Type Name="ITVideo">
+      <Column Name="IdVidea" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Naslov" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Video" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Datum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vrsta" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdKorisnik" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Korisnik_ITVideo" Member="Korisnik" ThisKey="IdKorisnik" OtherKey="IdKorisnika" Type="Korisnik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Klijent" Member="Klijents">
+    <Type Name="Klijent">
+      <Column Name="IdKlijenta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Prezime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BrojTelefona" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Adresa" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Lozinka" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IdKorisnika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Korisnik_Klijent" Member="Korisnik" ThisKey="IdKorisnika" OtherKey="IdKorisnika" Type="Korisnik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Korisnik" Member="Korisniks">
+    <Type Name="Korisnik">
+      <Column Name="IdKorisnika" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Prezime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PoslovniEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lozinka" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Korisnik_DirektorVideo" Member="DirektorVideos" ThisKey="IdKorisnika" OtherKey="IdKorisnika" Type="DirektorVideo" />
+      <Association Name="Korisnik_PravnaVideo" Member="PravnaVideos" ThisKey="IdKorisnika" OtherKey="IdKorisnika" Type="PravnaVideo" />
+      <Association Name="Korisnik_EkonomskaVideo" Member="EkonomskaVideos" ThisKey="IdKorisnika" OtherKey="IdKorisnika" Type="EkonomskaVideo" />
+      <Association Name="Korisnik_ITVideo" Member="ITVideos" ThisKey="IdKorisnika" OtherKey="IdKorisnik" Type="ITVideo" />
+      <Association Name="Korisnik_Klijent" Member="Klijents" ThisKey="IdKorisnika" OtherKey="IdKorisnika" Type="Klijent" />
+    </Type>
+  </Table>
+</Database>
