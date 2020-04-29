@@ -14,7 +14,19 @@ namespace VideoPlatformaOI.Controllers
 
             return View();
         }
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(FormCollection fc)
+        {
+            return View();
+        }
 
        
     }
+
+  
 }
