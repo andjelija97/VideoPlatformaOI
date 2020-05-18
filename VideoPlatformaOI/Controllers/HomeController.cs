@@ -22,7 +22,39 @@ namespace VideoPlatformaOI.Controllers
         [HttpPost]
         public ActionResult Login(FormCollection fc)
         {
-            return View();
+            OIVideoPlatformaDataContext oiVideo = new OIVideoPlatformaDataContext();
+            if (fc["username"] != null && fc["pass"] != null)
+            {
+                string user = fc["username"];
+                string pass = fc["pass"];
+
+                Klijent k = (from c in oiVideo.Klijents
+                             where c.Email.Equals(user) && c.Lozinka.Equals(pass)
+                             select c).Single();
+             Session["Klijent"] = k;
+                if (k != null)
+                {
+                   
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.Poruka = "Nema tog korisnika";
+                    return View();
+                }
+            }
+            else
+            {
+                ViewBag.Poruka = "Nema tog korisnika";
+                return View();
+
+            }
+        }
+
+        public ActionResult OdjaviSe()
+        {
+            Session["Klijent"] = null;
+            return RedirectToAction("Login");
         }
 
        

@@ -1,5 +1,6 @@
 ﻿@{
-Layout=null;
+    Layout=null;
+    Klijent k = (Klijent)Session["Klijent"];
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +27,12 @@ Layout=null;
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-</head>
+    <style>
 
+    </style>
+</head>
+@if (k != null)
+{
 <body>
     <section class="hero-area-fix">
         <div class="hero-area" id="water">
@@ -36,7 +41,7 @@ Layout=null;
                     <div class="hero-text">
                         <h1>Образовни Информатор</h1>
                         <div id="typed-strings">
-                            <h3>Добродошли драги корисниче</h3>
+                            <h3>Добродошли драги @k.Ime</h3>
                             <h3>на нашу видео платформу</h3>
                             <h3>ту смо за вас</h3>
                         </div>
@@ -46,7 +51,9 @@ Layout=null;
                         <a href="#" class="btn buy-now">Економска Редакциоја</a><br /> <br />
                         <a href="#" class="btn buy-now">Директори</a>
                         <a href="#" class="btn buy-now">Туторијали нашег ИТ особља</a>
+                        <a href="Home/OdjaviSe" class="btn buy-now">Одјави се</a>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -54,137 +61,10 @@ Layout=null;
     <section class="product-landing pro_d" data-scroll-index="1">
         <div class="container">
             <div class="row">
-                <h2 class="title">Home onepage Demos</h2>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a href="drimo/index.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/index-1.png" class="img-responsive radius" alt="">
-                            <p class="product-title">OnePage - 01</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a href="drimo/index-2.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/index-2.png" class="img-responsive radius" alt="">
-                            <p class="product-title">OnePage - 02</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a href="drimo/index-3.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/index-3.png" class="img-responsive radius" alt="">
-                            <p class="product-title">OnePage - 03</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a href="drimo/index-4.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/index-4.png" class="img-responsive radius" alt="">
-                            <p class="product-title">OnePage - 04</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a href="drimo/index-5.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/index-5.png" class="img-responsive radius" alt="">
-                            <p class="product-title">OnePage - 05</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a href="drimo/index-6.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/index-6.png" class="img-responsive radius" alt="">
-                            <p class="product-title">OnePage - 06</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a href="drimo/index-7.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/index-7.png" class="img-responsive radius" alt="">
-                            <p class="product-title">OnePage - 07</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a href="drimo/index-8.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/index-8.png" class="img-responsive radius" alt="">
-                            <p class="product-title">OnePage - 08</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a href="drimo/index-9.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/index-9.png" class="img-responsive radius" alt="">
-                            <p class="product-title">OnePage - 09</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a href="drimo/index-10.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/index-10.png" class="img-responsive radius" alt="">
-                            <p class="product-title">OnePage - 10</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <a href="drimo/index-11.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/index-11.png" class="img-responsive radius" alt="">
-                            <p class="product-title">OnePage - 11</p>
-                        </div>
-                    </a>
-                </div>
+                <h2 class="title">Добродошли драги @k.Ime</h2>
+              </div>
             </div>
-        </div>
-    </section>
-    <section class="saas-landing">
-        <div class="container">
-            <div class="row">
-                <h2 class="title">Drimo Blog Page Demos</h2>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <a href="drimo/blog.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/blog-1.png" class="img-responsive radius" alt="">
-                            <p class="product-title">Blog List - 01</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <a href="drimo/blog-right-sidebar.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/blog-2.png" class="img-responsive radius" alt="">
-                            <p class="product-title">Blog List - 02</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <a href="drimo/single-blog.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/blog-3.png" class="img-responsive radius" alt="">
-                            <p class="product-title">Blog Details</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <a href="drimo/404.html" target="_blank">
-                        <div class="item-imag">
-                            <img src="~/Content/image/product/error_page.png" class="img-responsive radius" alt="">
-                            <p class="product-title">Error</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+ </section>
     <footer class="footer-area">
         <div class="container">
             <div class="row text-center">
@@ -219,5 +99,6 @@ Layout=null;
     new WOW().init();
     </script>
 </body>
+}
 
 </html>
